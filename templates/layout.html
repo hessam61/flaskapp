@@ -3,7 +3,7 @@
 <head>
 	<title>Flask App</title>
 	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
-	<link href="static/css/main.css">
+	<link href="{{ url_for('static', filename='css/main.css')}}" rel="stylesheet">
 </head>
 <body>
 	<header>

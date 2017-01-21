@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<div id="content">
+		<h2>Create an account</h2>
+		
+		<form method="POST" action="/signup">
+			{{ form.hidden_tag() }}
+
+			<div class="form-item">
+				{{ form.first_name.label }}
+				{{ form.first_name }}
+			</div>
+
+			<div class="form-item">
+				{{ form.last_name.label }}
+				{{ form.last_name }}
+			</div>
+
+			<div class="form-item">
+				{{ form.email.label }}
+				{{ form.email }}
+			</div>
+
+			<div class="form-item">
+				{{ form.password.label }}
+				{{ form.password }}
+			</div>
+
+			{{ form.submit(class="btn-primary") }}
+		</form>
+	</div>
+{% endblock %}

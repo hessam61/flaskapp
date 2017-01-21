@@ -2,3 +2,7 @@ body{
 	font-family: 'Nunito', sans-serif;
 	background: #c1c1c1;
 }
+.error{
+	font-size: 10px;
+	color: #f00;
+}

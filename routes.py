@@ -21,6 +21,9 @@ def about():
 @app.route("/signup", methods=['GET', 'POST'])
 
 def signup():
+	if 'email' in session:
+		return redirect(url_for('home'))
+
 	form = SignupForm()
 
 	if request.method == 'POST':
@@ -39,6 +42,9 @@ def signup():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+	if 'email' in session:
+		return redirect(url_for('home'))
+		
 	form = LoginForm()
 
 	if request.method == "POST":

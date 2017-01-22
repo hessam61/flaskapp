@@ -3,6 +3,25 @@
 {% block content %}
 	<div id="content">
 		<h2>Home</h2>
-		<p>This app lets you find new places around you using Wiki API. With this app you can find places you like, and discover new points of interests.</p>
+		
+		<div class="map">
+			<div>
+				<form method="POST" action="/home">
+					{{ form.hidden_tag() }}
+
+					<div class="form-item">
+						{{ form.address.label }}
+
+						{% if form.address.errors %}
+							{% for error in form.address.errors %}
+								<p class="error">{{ error }}</p>
+							{% endfor %}
+						{% endif %}
+
+						{{ form.address }}
+					</div>
+					{{ form.submit(class="btn-primary") }}
+			</div>
+		</div>
 	</div>
 {% endblock %}
